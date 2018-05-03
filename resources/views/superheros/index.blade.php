@@ -36,7 +36,7 @@
                                 <a href="{{ URL::to('show/' . $superhero->id) }}" class="btn btn-primary btn-sm">Details</a>
                                 <a href="{{ URL::to('edit/' . $superhero->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                     {{ Form::hidden('_method', 'DELETE') }}
-                                    {{ Form::submit('Remove', array('class' => 'btn btn-warning btn-sm')) }}
+                                    {{ Form::submit('Remove', array('class' => 'btn btn-danger btn-sm')) }}
                                 {{ Form::close() }}
                                 <!-- <a href="#" class="btn btn-danger btn-sm">Remove</a> -->
                             </td>
