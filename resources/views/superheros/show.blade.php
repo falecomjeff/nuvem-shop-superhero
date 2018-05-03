@@ -41,11 +41,27 @@
                 @endif
             </div>
 
-            <label><strong>Updated at:</strong></label>
+            <div>
+                <label><strong>Updated at:</strong></label>
                 @if($superhero->created_at)
                     {{ $superhero->updated_at->format('d/m/Y H:i:s') }}
                 @endif
             </div>
+
+            <p>
+                <h4>Images of superhero</h4>
+            </p>
+            <hr>
+
+            @if($superhero->superheroImages)
+                <div>
+                    @foreach($superhero->superheroImages as $superheroImage)
+                        <p>
+                            <img src="{{ url('/') }}/images/{{ $superheroImage->name }}" width="300" class="rounded mx-auto d-block">
+                        </p>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 

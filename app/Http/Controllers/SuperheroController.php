@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Superheros;
+use App\SuperheroImages;
 use Illuminate\Http\Request;
 
 class SuperheroController extends Controller
@@ -49,7 +50,28 @@ class SuperheroController extends Controller
         ]);
 
         // Create a new entry in database with values of form.
-        Superheros::create($request->all());
+        $superheros = Superheros::create($request->all());
+
+        // Insert images of superheros, if exist.
+        if ($request->hasFile('superheroImages')) {
+            $images = $request->file('superheroImages');
+
+            foreach ($images as $key => $image) {
+                $name            = time() . uniqid() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('/images');
+
+                // Save superhero image on local directory.
+                $image->move($destinationPath, $name);
+
+                $superheroImages = new SuperheroImages;
+
+                // Insert reference of superhero image in database.
+                $superheroImages->name          = $name;
+                $superheroImages->superheros_id = $superheros->id;
+
+                $superheroImages->save();
+            }
+        }
 
         return redirect()->route('index')
             ->with('success','Superhero created successfully.');

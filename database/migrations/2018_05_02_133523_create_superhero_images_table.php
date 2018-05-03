@@ -17,7 +17,7 @@ class CreateSuperheroImagesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
-            $table->integer('superhero_id')->unsigned();
+            $table->integer('superheros_id')->unsigned();
         });
     }
 
