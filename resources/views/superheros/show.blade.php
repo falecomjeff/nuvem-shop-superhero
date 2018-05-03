@@ -6,17 +6,42 @@
     <div class="row justify-content-md-center">
         <div class="col col-lg-8">
             <p>
-                <h2>Detalhes do super-héroi</h2>
-            </p>
+                <h2>Details of superhero <u>{{ $superhero->nickname }}</u></h2>
+            </p><br>
 
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            <div>
+                <label><strong>Nickname:</strong></label>
+                {{ $superhero->nickname }}
+            </div>
+
+            <div>
+                <label><strong>Real name:</strong></label>
+                {{ $superhero->real_name }}
+            </div>
+
+            <div>
+                <label><strong>Origin description:</strong></label>
+                {{ $superhero->origin_description }}
+            </div>
+
+            <div>
+                <label><strong>superpowers:</strong></label>
+                {{ $superhero->superpowers }}
+            </div>
+
+            <div>
+                <label><strong>Catch phrase:</strong></label>
+                {{ $superhero->catch_phrase }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-8">
+            <hr>
+            <a class="btn btn-primary" href="{{ URL::to('edit/' . $superhero->id) }}" role="button">Edit</a>
+            <a class="btn btn-primary" href="{{ URL::to('/') }}" role="button">Back</a>
         </div>
     </div>
 @endsection

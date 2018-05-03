@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::to('/') }}">Lista de super-hérois</a>
+                        <a class="nav-link" href="{{ URL::to('/') }}">List of superheros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::to('create') }}">Criar novo super-héroi</a>
+                        <a class="nav-link" href="{{ URL::to('create') }}">Create a new superhero</a>
                     </li>
                 </ul>
             </div>

@@ -6,7 +6,7 @@
     <div class="row justify-content-md-center">
         <div class="col col-lg-8">
             <p>
-                <h2>Create a new superhero</h2>
+                <h2>Edit superhero <u>{{ $superhero->nickname }}</u></h2>
             </p>
 
             @if ($errors->any())
@@ -19,8 +19,9 @@
                 </div>
             @endif
 
-            {!! Form::open([
-                'route' => 'superhero.store',
+            {!! Form::model(($superhero), [
+                'route' => array('superhero.update', $superhero->id),
+                'method' => 'PUT',
             ]) !!}
 
                 <div class="form-group">
@@ -48,7 +49,7 @@
                     {!! Form::text('catch_phrase', null, ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Create superhero', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Edit superhero', ['class' => 'btn btn-primary']) !!}
                 <a class="btn btn-primary" href="{{ URL::to('/') }}" role="button">Back</a>
 
             {!! Form::close() !!}
