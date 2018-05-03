@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Page Title')
+@section('title', 'List of superheros')
 
 @section('content')
     <div class="row justify-content-md-center">
@@ -37,7 +37,6 @@
                                     {{ Form::hidden('_method', 'DELETE') }}
                                     {{ Form::submit('Remove', array('class' => 'btn btn-danger btn-sm')) }}
                                 {{ Form::close() }}
-                                <!-- <a href="#" class="btn btn-danger btn-sm">Remove</a> -->
                             </td>
                             <td scope="row">
                                 @if($superhero->created_at)

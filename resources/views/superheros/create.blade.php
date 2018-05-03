@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', '| Detalhes do super-héroi')
+@section('title', '| Create a superhero')
 
 @section('content')
     <div class="row justify-content-md-center">
@@ -50,8 +50,6 @@
                 </div>
 
                 <div class="form-group">
-                <!-- <form name="add_name" id="add_name"> -->
-
                     <div class="alert alert-danger print-error-msg" style="display:none">
                         <ul></ul>
                     </div>

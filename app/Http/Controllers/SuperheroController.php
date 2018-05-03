@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Superheros;
 use App\SuperheroImages;
+
 use Illuminate\Http\Request;
+use File;
 
 class SuperheroController extends Controller
 {
@@ -138,6 +140,27 @@ class SuperheroController extends Controller
         // Persist data.
         $superhero->save();
 
+        // Insert images of superheros, if exist.
+        if ($request->hasFile('superheroImages')) {
+            $images = $request->file('superheroImages');
+
+            foreach ($images as $key => $image) {
+                $name            = time() . uniqid() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('/images');
+
+                // Save superhero image on local directory.
+                $image->move($destinationPath, $name);
+
+                $superheroImages = new SuperheroImages;
+
+                // Insert reference of superhero image in database.
+                $superheroImages->name          = $name;
+                $superheroImages->superheros_id = $superhero->id;
+
+                $superheroImages->save();
+            }
+        }
+
         return redirect()->route('index')
             ->with('success','Superhero edited successfully.');
     }
@@ -157,5 +180,26 @@ class SuperheroController extends Controller
 
         return redirect()->route('index')
             ->with('success', 'Superhero has been deleted.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Superheros  $superheros
+     * @return \Illuminate\Http\Response
+     */
+    public function destroySuperheroImage($id)
+    {
+        // Get a specific superhero by $id.
+        $superheroImage = SuperheroImages::find($id);
+
+        // Delete superhero.
+        $superheroImage->delete();
+
+        // Delete image from directory
+        File::delete(public_path("images/" . $superheroImage->name));
+
+        return redirect()->route('superhero.edit', array('id' => $superheroImage->superheros_id))
+            ->with('success', 'Superhero image has been deleted.');
     }
 }

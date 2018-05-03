@@ -1,13 +1,19 @@
 @extends('layouts.base')
 
-@section('title', '| Detalhes do super-héroi')
+@section('title', '| Superhero details')
 
 @section('content')
     <div class="row justify-content-md-center">
         <div class="col col-lg-8">
             <p>
                 <h2>Details of superhero <u>{{ $superhero->nickname }}</u></h2>
-            </p><br>
+            </p>
+
+            @if(\Session::has('success'))
+                <div class="alert alert-success">
+                    {{\Session::get('success')}}
+                </div>
+            @endif
 
             <div>
                 <label><strong>Nickname:</strong></label>
