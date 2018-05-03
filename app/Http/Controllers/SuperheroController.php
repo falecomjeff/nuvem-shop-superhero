@@ -15,7 +15,7 @@ class SuperheroController extends Controller
     public function index()
     {
         // Get all superheros.
-        $superheros = Superheros::orderBy('created_at', 'desc')->paginate(10);
+        $superheros = Superheros::orderBy('created_at', 'desc')->paginate(5);
 
         return View('superheros.index')
             ->with('superheros', $superheros);

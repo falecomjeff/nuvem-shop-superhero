@@ -18,17 +18,16 @@
             <table class="table table-sm">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nickname</th>
                         <th scope="col">Real name</th>
                         <th scope="col">Actions</th>
+                        <th scope="col">Created at</th>
                     </tr>
                 </thead>
 
                 <tbody>
                    @foreach($superheros as $superhero)
                         <tr>
-                            <th scope="row">{{ $superhero->id }}</th>
                             <td>{{ $superhero->nickname }}</td>
                             <td>{{ $superhero->real_name }}</td>
                             <td>
@@ -40,10 +39,21 @@
                                 {{ Form::close() }}
                                 <!-- <a href="#" class="btn btn-danger btn-sm">Remove</a> -->
                             </td>
+                            <td scope="row">
+                                @if($superhero->created_at)
+                                    {{ $superhero->created_at->format('d/m/Y') }}
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <nav aria-label="Page navigation example">
+                {{ $superheros->links(("pagination::bootstrap-4")) }}
+        </nav>
     </div>
 @endsection

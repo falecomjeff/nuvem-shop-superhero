@@ -33,6 +33,19 @@
                 <label><strong>Catch phrase:</strong></label>
                 {{ $superhero->catch_phrase }}
             </div>
+
+            <div>
+                <label><strong>Created at:</strong></label>
+                @if($superhero->created_at)
+                    {{ $superhero->created_at->format('d/m/Y H:i:s') }}
+                @endif
+            </div>
+
+            <label><strong>Updated at:</strong></label>
+                @if($superhero->created_at)
+                    {{ $superhero->updated_at->format('d/m/Y H:i:s') }}
+                @endif
+            </div>
         </div>
     </div>
 
