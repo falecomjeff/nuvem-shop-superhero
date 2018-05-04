@@ -61,6 +61,11 @@ php artisan migrate
 php artisan key:generate
 ```
 
+### 6. Criar diretório de armazenamento das imagens, caso não tenha sido criado automaticamente no clone do projeto.
+
+```sh
+mkdir public/images
+```
 
 ## Execução dos testes com phpunit
 ```sh
