@@ -36,7 +36,7 @@ Em resumo, a aplicação deve permitir a realização de um CRUD completo para u
 ### 1. Clone o projeto
 
 ```sh
-git clone git@gitlab.com:falecomjeff/leroy-merlin-teste-api.git
+git clone git@github.com:falecomjeff/nuvem-shop-superhero.git
 ```
 
 ### 2. Instale as dependências do projeto
