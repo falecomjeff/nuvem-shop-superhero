@@ -12,7 +12,7 @@
 
 O software tem por objetivo comprovar o conhecimento no desenvolvimento de aplicações PHP utilizando o framework Laravel. A ferramenta foi desenvolvida de acordo com [o escopo](./storage/escopo/PHP_Engineer_Test.pdf) passado pela equipe de recrutamento da Nuvem Shop.
 
-Em resumo, a aplicação deve permitir a realização de um CRUD completo para a inserção de super-hérois na base de dados. Deve ser possível ainda fazer o upload de imagens sobre o super-héroi, no formato de array collection, numa entidade one-to-many, sendo possível inserir e remover imagens a qualquer tempo na criação e edição dos dados de um super-héroi.
+Em resumo, a aplicação deve permitir a realização de um CRUD completo para uma base de super-hérois. Deve ser possível ainda fazer o upload de imagens sobre o super-héroi, no formato de array collection, numa entidade one-to-many, sendo possível inserir e remover imagens a qualquer tempo na criação e edição dos dados de um super-héroi. Os resultados deverão ser paginados em 5 itens por página.
 
 
 ## Pré-requisitos
