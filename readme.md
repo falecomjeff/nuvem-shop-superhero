@@ -5,7 +5,9 @@
 
 1. Teste executado em Laravel, na versão 5.5.
 
-2. Para para realização do teste: 2 dias úteis (de 02/05 a 03/05). Como estou atualmente empregado, o teste foi realizado em horários alternativos, dando um total aproximado de 12h de trabalho. Caso o trabalho em prazos apertados e comprometimento com datas seja um ponto de avaliação, fica a informação. ;-)
+2. Prazo para realização do teste: 2 dias úteis (de 02/05 a 03/05). Como estou atualmente empregado, o teste foi realizado em horários alternativos, dando um total aproximado de 12h de trabalho, no máximo. Caso o trabalho em prazos apertados e comprometimento com datas seja um ponto de avaliação, fica a informação. ;-)
+
+3. Acabei de notar que estou exibindo a lista de super-heróis de maneira diferente do que foi solicitado no escopo. Lendo o escopo com mais atenção, vi que era para exibir uma imagem e o nickname, ao invés do nickname e do realname. Caso eu possa extrapolar um pouco o prazo e corrigir isso posteriomente, me avisem que faço a correção. Isso não parece omitir algum conhecimento do canditado, mas posso corrigir se acharem necessário e me derem mais tempo.
 
 
 ## Objetivo do software

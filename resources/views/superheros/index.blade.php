@@ -21,7 +21,6 @@
                         <th scope="col">Nickname</th>
                         <th scope="col">Real name</th>
                         <th scope="col">Actions</th>
-                        <th scope="col">Created at</th>
                     </tr>
                 </thead>
 
@@ -37,11 +36,6 @@
                                     {{ Form::hidden('_method', 'DELETE') }}
                                     {{ Form::submit('Remove', array('class' => 'btn btn-danger btn-sm')) }}
                                 {{ Form::close() }}
-                            </td>
-                            <td scope="row">
-                                @if($superhero->created_at)
-                                    {{ $superhero->created_at->format('d/m/Y') }}
-                                @endif
                             </td>
                         </tr>
                     @endforeach
